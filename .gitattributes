@@ -1,7 +1,7 @@
 # https://docs.gitlab.com/ee/user/project/highlighting.html
 
-  README gitlab-language=markdown
-  README linguist-language=markdown
+  /README gitlab-language=markdown
+  /README linguist-language=markdown
   
   *.functions gitlab-language=bash
   *.functions linguist-language=bash
