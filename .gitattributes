@@ -1,7 +1,4 @@
 # https://docs.gitlab.com/ee/user/project/highlighting.html
 
-  /README gitlab-language=md
-  /README linguist-language=md
-  
   *.functions gitlab-language=bash
   *.functions linguist-language=bash
