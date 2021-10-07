@@ -1,6 +1,7 @@
 let txt = "Cats and Dogs love dogs and cats and dogcats and catdugs.";
 let prtctm = ":FGD:"; // TEMPORARY PROTECT MARKER  
 
+/*
 let dict = [{ from: "cat" , to: 'dog'},
             //{ from: "dog" , to: "cat"}
             { from: "d[ouia]g" , to: "cat"}
@@ -8,9 +9,17 @@ let dict = [{ from: "cat" , to: 'dog'},
            ];
 // SORT ACCORDING TO LENGTH (from) FROM LONG TO SHORT
 dict.sort((a,b) => b.from.length - a.from.length)
-
+*/
+let dictsrc;
+function preload() {
+  dictsrc = loadTable('dictionary.csv','csv','header');
+}
 
 function setup() {
+
+  // https://p5js.org/reference/#/p5.Table/getArray
+  dict = dictsrc.getArray();
+  dict.sort((a,b) => b[0].length - a[0].length);
 
   canvas = createCanvas(w, h);
   background(255, 255, 128);
@@ -22,8 +31,10 @@ function setup() {
 
   for (var i = 0; i < dict.length; i++) {
 
-       from  = dict[i]["from"];
-       to    = dict[i]["to"];
+       //from  = dict[i]["from"];
+       //to    = dict[i]["to"];
+       from  = dict[i][0];
+       to    = dict[i][1];
        //txt   = txt.replace(new RegExp(from,"ig"),to);
     // ADD TMP PROTECT MARKER
     // => REPLACE ONLY IF NO PROTECT MARKER
