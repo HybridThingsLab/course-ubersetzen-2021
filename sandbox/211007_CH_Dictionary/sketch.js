@@ -1,4 +1,4 @@
-let txt = "Cats and Dogs love dogs and cats and dogcats and catdugs.";
+//let txt = "Cats and Dogs love dogs and cats and dogcats and catdugs.";
 let prtctm = ":FGD:"; // TEMPORARY PROTECT MARKER  
 
 /*
@@ -10,12 +10,17 @@ let dict = [{ from: "cat" , to: 'dog'},
 // SORT ACCORDING TO LENGTH (from) FROM LONG TO SHORT
 dict.sort((a,b) => b.from.length - a.from.length)
 */
+let txtsrc;
 let dictsrc;
 function preload() {
+  txtsrc = loadStrings('text.txt');
   dictsrc = loadTable('dictionary.csv','csv','header');
 }
 
 function setup() {
+
+  // https://p5js.org/reference/#/p5/loadStrings
+  txt = txtsrc[0];
 
   // https://p5js.org/reference/#/p5.Table/getArray
   dict = dictsrc.getArray();
@@ -23,11 +28,11 @@ function setup() {
 
   canvas = createCanvas(w, h);
   background(255, 255, 128);
-  textSize(w/30);
+  textSize(w/20);
 
   //console.log(txt);
   fill(0,180,0);
-  text(txt, 40, 80, w-80, h/3-80);
+  text(txt, 40, 80, w-80, h/2-80);
 
   for (var i = 0; i < dict.length; i++) {
 
@@ -45,7 +50,7 @@ function setup() {
   txt = txt.replace(new RegExp(prtctm,"g"),"");
 
   fill(200);
-  text(txt, 40, h/4+20, w-80, h/2-80);
+  text(txt, 40, h/2-80, w-80, h/2-80);
 
 }
 
