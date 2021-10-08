@@ -1,0 +1,17 @@
+https://code.visualstudio.com/Download
+-> Applications
+
+Start Visual Studio Code
+
+Extensions -> Install
+- JSON Tools
+- Beautify
+- Live Server
+
+Configure Liveserver
+
+On Windows : File > Preferences > Settings
+On Mac     : Code > Preferences > Settings
+Search for "browser"
+In settings "Live Server > Settings: Custom Browser" choose "Chrome"
+
