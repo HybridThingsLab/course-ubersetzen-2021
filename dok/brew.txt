@@ -1,0 +1,5 @@
+INSTALL FOLLOWING https://brew.sh
+
+$ brew install gnu-sed
+$ brew install sox
+
