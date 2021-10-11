@@ -1,0 +1,27 @@
+
+#  CREATE SOLID COLOR IMAGE
+# (REQUIRES: brew install imagemagick)
+convert -size 100x100 xc:#990000 whatever.png
+
+# PLAY SOUNDS
+# (REQUIRES: brew install sox)
+play -n synth 0.5 sin 524
+play -n synth sin 200 fade h 0.5 1 0.5
+
+# GOOGLE
+# (REQUIRES: brew install sed grep)
+# ---------------------------------
+GURL="http://www.google.com/search?q="
+AGENT="Mozilla/4.0"
+Q="Hello world"
+curl -A "$AGENT" -skLm 10 "${GURL}\"${Q/\ /+}\"" | ggrep -oP '\/url\?q=.+?&amp' | gsed 's/\/url?q=//;s/&amp//'
+
+# MACOS
+open Terminal
+# WINDOWS ??
+https://www.putty.org
+https://www.hs-augsburg.de/Rechenzentrum/Privates-Verzeichnis.html
+
+ssh benutzer.name@login.rz.hs-augsburg.de
+
+
